@@ -9,7 +9,12 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://ems-react-app-1.onrender.com",
+    credentials: true,
+  })
+);
 
 app.use(
   "/graphql",
